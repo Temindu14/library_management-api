@@ -5,10 +5,19 @@ public class Main {
 
         Book book = new Book("Ahh", "Ohh", "Ehh", 29.99, 3, 2026);
 
+
         System.out.println(book);
 
         book.setPrice(39.99);
         System.out.println(book);
+
+        Member member = new Member("Tom", "MI00001", "0771234567","Kegalle" , 14/10/1990, true );
+        System.out.println(member);
+
+        member.setActive(false);
+        System.out.println(member);
+
+
 
         }
 
