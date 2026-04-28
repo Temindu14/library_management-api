@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Member {
 
     private String name;
@@ -6,7 +8,7 @@ public class Member {
     private String address;
     private int dateOfBirth;
     private boolean isActive;
-
+    private ArrayList<Book> borrowedBooks;
 
     public Member(String name, String memberID, String phoneNumber, String address, int dateOfBirth, boolean isActive) {
         this.name = name;
@@ -15,6 +17,7 @@ public class Member {
         this.address = address;
         this.dateOfBirth = dateOfBirth;
         this.isActive = isActive;
+        this.borrowedBooks = new ArrayList<>();
 
 
     }
@@ -63,6 +66,19 @@ public class Member {
     public String toString() {
         return "Member name: " + name + ",Member ID: " + memberID + ",Phone Number: " + phoneNumber+ ",Member Activity: " + isActive;
 
+    }
+
+    public void borrowBook(Book book){
+        borrowedBooks.add(book);
+
+    }
+
+    public void returnBook(Book book){
+        borrowedBooks.remove(book);
+    }
+
+    public ArrayList<Book> getBorrowedBooks(){
+        return borrowedBooks;
     }
 
 }
