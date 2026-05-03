@@ -3,26 +3,30 @@
 public class Main {
     public static void main(String[] args) {
 
+        Library library = new Library();
+
+
         Book book = new Book("Ahh", "Ohh", "Ehh", 29.99, 3, 2026);
         Book book2 = new Book("Aha", "Oho", "Ehe", 19.99, 5, 2025);
 
-        System.out.println(book);
 
-        book.setPrice(39.99);
-        System.out.println(book);
+        library.addBook(book);
+        library.addBook(book2);
 
-        Member member = new Member("Tom", "MI00001", "0771234567","Kegalle" , 14/10/1990, true );
-        System.out.println(member);
+        Member member = new Member("Tom", "MI00001", "0771234567","Kegalle" , 1990, true );
+        library.addMember(member);
 
-        member.borrowBook(book);
-        member.borrowBook(book2);
 
-        System.out.println(member.getBorrowedBooks());
 
-        member.returnBook(book);
+
+
+        library.borrowBook(member , book);
 
         System.out.println(member.getBorrowedBooks());
 
+        library.returnBook(member, book);
+
+        System.out.println(member.getBorrowedBooks());
 
 
         }
